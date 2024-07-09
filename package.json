@@ -6,11 +6,19 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test:unit": "vitest",
+    "coverage:unit": "vitest run --coverage"
   },
   "dependencies": {
+    "next": "14.2.4",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.4"
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^2.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.4",
+    "vitest": "^2.0.1"
   }
 }
