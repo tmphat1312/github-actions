@@ -1,0 +1,17 @@
+name: cowsay
+run-name: ${{ github.actor }} is learning GitHub Actions with cowsay
+on:
+  issues:
+    types: [opened, closed]
+jobs:
+  cowsay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install cowsay
+        run: npm i -g cowsay
+      - name: Run cowsay
+        run: cowsay "Hello, GitHub Actions!"
