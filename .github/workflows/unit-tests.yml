@@ -18,4 +18,4 @@ jobs:
       - name: Install Dependencies
         run: pnpm install -D
       - name: Run unit tests
-        run: pnpn test
+        run: pnpm test
