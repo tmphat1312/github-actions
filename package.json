@@ -13,6 +13,7 @@
     "format": "prettier --write \"**/*.{js,jsx,json,jsonc,md,css}\"",
     "pre-commit": "lint-staged --verbose --concurrent false",
     "commitlint": "commitlint --edit ${1}",
+    "clean": "rimraf -v coverage playwright-report test-results .next",
     "prepare": "husky"
   },
   "dependencies": {
