@@ -9,6 +9,9 @@
     "lint": "next lint",
     "test": "vitest",
     "coverage": "vitest run --coverage",
+    "format": "prettier --write \"**/*.{js,jsx,json,jsonc,md,css}\"",
+    "pre-commit": "lint-staged --verbose --concurrent false",
+    "prepare": "husky"
   },
   "dependencies": {
     "next": "14.2.4",
@@ -19,6 +22,19 @@
     "@vitest/coverage-v8": "^2.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
+    "eslint-config-prettier": "^9.1.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.7",
+    "prettier": "^3.3.2",
     "vitest": "^2.0.1"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{json,jsonc,md,css}": [
+      "prettier --write"
+    ]
   }
 }
