@@ -18,8 +18,8 @@ jobs:
           version: 9
 
       - name: Install dev deps
-        run: pnpm i
+        run: pnpm i -D
 
       - name: Validate PR commits with commitlint
         if: github.event_name == 'pull_request'
-        run: pnpm commitlint --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} --to ${{ github.event.pull_request.head.sha }} --verbose
+        run: pnpm exec commitlint --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} --to ${{ github.event.pull_request.head.sha }} --verbose
