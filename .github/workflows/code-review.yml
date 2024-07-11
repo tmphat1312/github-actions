@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: '20'
       - name: Install pnpm
-        run: npm install -g pnpm
+        run: pnpm/action-setup@v4
       - name: Install Dependencies
         run: pnpm install
       - name: Run eslint linting
