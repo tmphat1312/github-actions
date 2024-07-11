@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "vitest",
+    "test:e2e": "pnpm exec playwright test",
     "coverage": "vitest run --coverage",
     "format": "prettier --write \"**/*.{js,jsx,json,jsonc,md,css}\"",
     "pre-commit": "lint-staged --verbose --concurrent false",
