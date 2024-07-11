@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "vitest",
-    "test:e2e": "pnpm exec playwright test",
+    "test:e2e": "playwright test",
     "coverage": "vitest run --coverage",
     "format": "prettier --write \"**/*.{js,jsx,json,jsonc,md,css}\"",
     "pre-commit": "lint-staged --verbose --concurrent false",
@@ -33,6 +33,7 @@
     "husky": "^9.0.11",
     "lint-staged": "^15.2.7",
     "prettier": "^3.3.2",
+    "rimraf": "^6.0.1",
     "vitest": "^2.0.1"
   },
   "lint-staged": {
