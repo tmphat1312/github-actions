@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: '20'
       - name: Install pnpm
-        run: pnpm/action-setup@v4
+        run: npm i -g pnpm
       - name: Install Dependencies
         run: pnpm install
       - name: Run unit tests
