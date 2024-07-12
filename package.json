@@ -3,19 +3,30 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "test": "vitest",
-    "test:e2e": "playwright test",
-    "coverage": "vitest run --coverage",
-    "format": "prettier --write \"**/*.{js,jsx,json,jsonc,md,css}\"",
-    "pre-commit": "lint-staged --verbose --concurrent false",
-    "commitlint": "commitlint --edit ${1}",
+    "check-format": "prettier --check \"**/*.{js,jsx,json,jsonc,md,css}\"",
     "clean": "rimraf -v coverage playwright-report test-results .next",
-    "prepare": "husky"
+    "commitlint": "commitlint --edit ${1}",
+    "coverage": "vitest run --coverage",
+    "dev": "next dev",
+    "format": "prettier --write \"**/*.{js,jsx,json,jsonc,md,css}\"",
+    "lint": "next lint",
+    "pre-commit": "lint-staged --verbose --concurrent false",
+    "prepare": "husky",
+    "start": "next start",
+    "test": "vitest",
+    "test:e2e": "playwright test"
   },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{json,jsonc,md,css}": [
+      "prettier --write"
+    ]
+  },
+  "prettier": "@vercel/style-guide/prettier",
   "dependencies": {
     "next": "14.2.4",
     "react": "^18",
@@ -26,6 +37,7 @@
     "@commitlint/config-conventional": "^19.2.2",
     "@playwright/test": "^1.45.1",
     "@types/node": "^20.14.10",
+    "@vercel/style-guide": "^6.0.0",
     "@vitest/coverage-v8": "^2.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
@@ -35,14 +47,5 @@
     "prettier": "^3.3.2",
     "rimraf": "^6.0.1",
     "vitest": "^2.0.1"
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx}": [
-      "prettier --write",
-      "eslint --fix"
-    ],
-    "*.{json,jsonc,md,css}": [
-      "prettier --write"
-    ]
   }
 }
